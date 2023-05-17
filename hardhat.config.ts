@@ -6,13 +6,15 @@ import { getHardhatConfigNetworks } from "@zetachain/addresses-tools/dist/networ
 import "./tasks/account";
 import "./tasks/faucet";
 import "./tasks/balances";
+import "./tasks/deploy";
+import "./tasks/withdraw";
 
 dotenv.config();
 const PRIVATE_KEYS =
   process.env.PRIVATE_KEY !== undefined ? [`0x${process.env.PRIVATE_KEY}`] : [];
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.18",
+  solidity: "0.8.7",
   networks: {
     ...getHardhatConfigNetworks(PRIVATE_KEYS),
   },
