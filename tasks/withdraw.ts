@@ -15,6 +15,10 @@ const main = async (args: any, hre: HardhatRuntimeEnvironment) => {
   };
 
   const network = hre.network.name;
+  const contractAddress = "0x131bBeBEcF2C3897fa489Ef9E006905c091D937E";
+  const recipientAddress = "0x2c2d7aF555156eFB8Bfc3eBB0C41fE57D4D1C7c4";
+  const preparedData = prepareData(contractAddress, recipientAddress);
+  console.log("Prepared data:", preparedData);
   const data = prepareData(args.contract, args.recipient);
   const to = getAddress({
     address: "tss",
